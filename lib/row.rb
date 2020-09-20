@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Row
   COLS_NUMBER = 50
 
@@ -37,9 +39,8 @@ class Row
     gaps
   end
 
-  def seats_are_valid?(first_seat, last_seat)
-    (0..COLS_NUMBER).include?(first_seat) && 
-    (0..Row::COLS_NUMBER).include?(last_seat)
+  def self.valid_seat_numbers?(first_seat, last_seat)
+    (0..COLS_NUMBER).include?(first_seat) && (0..Row::COLS_NUMBER).include?(last_seat)
   end
 
   private
